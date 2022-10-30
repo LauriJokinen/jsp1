@@ -1,16 +1,12 @@
 
-document.querySelector("#kirjoita").addEventListener("keydown",(event)=> {
+document.querySelector("#userInput").addEventListener("keydown", (event) => {
   if (event.key == "Enter")
     addItem();
-
 });
-
-
-
 
 addItem = () => {
   const item = document.createElement("h2")
-  item.textContent = document.querySelector("#kirjoita").value;
+  item.textContent = "- " + document.querySelector("#userInput").value;
 
   item.addEventListener("click", () => {
     if(item.style.textDecoration != "line-through")
@@ -19,7 +15,6 @@ addItem = () => {
       item.style.textDecoration = "none";
   })
 
-  document.querySelector("#ostokset").appendChild(item);
-  document.querySelector("#kirjoita").value = "";
-
+  document.querySelector("#groceryItems").appendChild(item);
+  document.querySelector("#userInput").value = "";
 }
