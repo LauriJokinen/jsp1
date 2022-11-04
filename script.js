@@ -9,7 +9,20 @@ for ( var i = 0, len = localStorage.length; i < len; ++i ) {
   varasto.textContent =  localStorage.key(i);
   document.querySelector("#ostokset").appendChild(varasto);
 
-}
+  //local storagen artikkelien yliviivaus ja poisto
+
+  varasto.addEventListener("click", () => {
+
+    if(varasto.style.textDecoration != "line-through" && varasto.style.color !="grey"){
+      varasto.style.textDecoration = "line-through";
+      varasto.style.color ="grey";}
+
+    else {
+      varasto.style.textDecoration = "none";
+      varasto.style.color ="black";
+      }
+    })
+  }
 }
 
 for ( var i = 0, len = localStorage.length; i < len; ++i ) {
