@@ -1,5 +1,6 @@
 # jsp1
 Ostoslista
 
-Kirjoita listaan tarvittavat ostokset.
-klikkaamalla ostoksista voit merkitä ne ostetuiksi
+listaan voi lisätä tarvitsemansa artikkelin kirjoittamalla tekstiruutuun.
+Artikkelin klikkaaminen hyliviivaa sen.
+lisätyt artikkelit säilyvät local storagessa, kunnes ne poistetaan poista napista.
