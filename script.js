@@ -29,6 +29,7 @@ for ( var i = 0, len = localStorage.length; i < len; ++i ) {
   console.log( localStorage.key(i ) );
 }
 
+  //enteriä tai lisää nappia painamalla suoritetaan addItem funktio
 
 document.querySelector("#kirjoita").addEventListener("keydown",(event)=> {
    if (event.key == "Enter" ){
@@ -36,7 +37,6 @@ document.querySelector("#kirjoita").addEventListener("keydown",(event)=> {
       }
     });
 
-  //lisää listalle artikkelin
 
 document.querySelector("#lisää").addEventListener("click", (event) => {
     addItem();
@@ -45,7 +45,7 @@ document.querySelector("#lisää").addEventListener("click", (event) => {
  //poistaa kaikki artikkelit listalta
 
 document.querySelector("#poista").addEventListener("click", (event) => {
-  document.querySelector("#ostokset").textContent ="";
+  document.querySelector("#ostokset").textContent =null;
   localStorage.clear();
 });
 
@@ -71,15 +71,12 @@ addItem = () => {
     }
   })
 
-  //Ostosten tulostus, liian vähistä merkeistä hälyttää
+  //Ostosten tulostus, local storageen tallennus ja liian vähistä merkeistä hälyttää
 
   if(item.textContent.length >= 3) {
   document.querySelector("#ostokset").appendChild(item);
 
-
     localStorage.setItem(item.textContent, "ostos");
-
-
 
   document.querySelector("#kirjoita").value = null;
 }
@@ -88,6 +85,6 @@ addItem = () => {
 
     }
 
-  console.log(item.textContent.length);
+
 
 }
