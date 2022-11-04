@@ -1,3 +1,6 @@
+
+  //sivun ladattua otetaan local storagesta edelliset artikkelit
+
 window.onload = (event) => {
 
 for ( var i = 0, len = localStorage.length; i < len; ++i ) {
